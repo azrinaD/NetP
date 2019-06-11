@@ -43,6 +43,7 @@ event_loop.register(&server_socket,
                     PollOpt::edge()).unwrap();
                      
 use std::collections::HashMap;
+let map: HashMap<u32, u32> = HashMap::new();
 
 struct WebSocketServer {
     socket: TcpListener,
