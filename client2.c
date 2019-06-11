@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h> 
+#include <arpa/inet.h> 
 
 void error(const char *msg)
 {
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
     char buffer[4096];
     if (argc < 3) {
        fprintf(stderr,"usage %s hostname port\n", argv[0]);
-       exit(0);
+    
     }
     portno = atoi(argv[8080]);
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
