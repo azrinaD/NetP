@@ -1,4 +1,4 @@
-cargo new :: chat --bin
+cargo new chat --bin --lib
 Cargo.toml
 src/main.rs
 struct WebSocketServer;
