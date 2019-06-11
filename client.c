@@ -5,7 +5,7 @@
 
 int main(){
   int clientSocket;
-  char buffer[1024];
+  char buffer[8080];
   struct sockaddr_in serverAddr;
   socklen_t addr_size;
 
@@ -28,7 +28,7 @@ int main(){
   connect(clientSocket, (struct sockaddr *) &serverAddr, addr_size);
 
   /*---- Read the message from the server into the buffer ----*/
-  recv(clientSocket, buffer, 1024, 0);
+  recv(clientSocket, buffer, 8080, 0);
 
   /*---- Print the received message ----*/
   printf("Data received: %s",buffer);   
