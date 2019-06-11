@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     struct sockaddr_in serv_addr;
     struct hostent *server;
 
-    char buffer[256];
+    char buffer[4096];
     if (argc < 3) {
        fprintf(stderr,"usage %s hostname port\n", argv[0]);
        exit(0);
@@ -44,13 +44,13 @@ int main(int argc, char *argv[])
     printf("Client: ");
     while(1)
     {
-        bzero(buffer,255);
-        fgets(buffer,255,stdin);
+        bzero(buffer,4096);
+        fgets(buffer,4096,stdin);
         n = write(sockfd,buffer,strlen(buffer));
         if (n < 0) 
              error("ERROR writing to socket");
         bzero(buffer,255);
-        n = read(sockfd,buffer,255);
+        n = read(sockfd,buffer,4096);
         if (n < 0) 
              error("ERROR reading from socket");
         printf("Server : %s\n",buffer);
