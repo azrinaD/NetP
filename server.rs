@@ -1,5 +1,3 @@
-cargo new chat --bin --lib
-Cargo.toml
 src/main.rs
 struct WebSocketServer;
 impl Handler for WebSocketServer {
