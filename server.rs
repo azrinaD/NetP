@@ -1,4 +1,3 @@
-src/main.rs
 struct WebSocketServer;
 impl Handler for WebSocketServer {
     // Traits can have useful default implementations, so in fact the handler
